@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %} Upload CSV - Docspert Health {% endblock %} {% block content %}
+<main class="container">
+    <h1>Upload Your CSV File</h1>
+    <p>Upload a valid CSV file to add data to the database. Ensure the file format is correct.</p>
+
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="file">Select CSV File:</label>
+            <input type="file" name="file" id="file" required>
+        </div>
+        <button type="submit" class="button">Upload</button>
+    </form>
+
+    <a href="/" class="button" style="background-color: #007bff;">Back to Home</a>
+</main>
+{% endblock %}

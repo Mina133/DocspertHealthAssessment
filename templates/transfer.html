@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Transfer Between Accounts{% endblock %} {% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Transfer Between Accounts</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %} {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Transfer</button>
+            </form>
+        </div>
+    </div>
+
+    {% if messages %}
+    <div class="mt-4">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
