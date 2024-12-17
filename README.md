@@ -125,13 +125,3 @@ Run the unit tests to ensure the application behaves as expected:
 python manage.py test
 ```
 
----
-
-## **Future Improvements**
-- Add Docker support for containerized deployment.
-- Implement role-based authentication.
-- Extend the database model to support additional account-related features.
-
----
-
-
